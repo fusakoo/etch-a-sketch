@@ -1,0 +1,27 @@
+:root {
+    /* Default number of rows & columns*/
+    --grid-rows: 16;
+    --grid-cols: 16;
+}
+  
+#cell-container {
+    display: grid;
+    grid-gap: 0;
+    /* Repeat the number of rows */
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    /* Repeat the set number of columns */
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    height: 600px;
+    width: 600px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+  
+.cell-item {
+    border: 0.5px solid white;
+    margin: 0;
+}
+
+.fill {
+    background-color: black;
+}
