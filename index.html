@@ -10,12 +10,17 @@
     <body>
         <main>
             <h1>Etch-a-Sketch</h1>
-            <div id="cell-container"></div>
+            <div id="container">
+                <!--Cells incerted by script here-->
+            </div>
             <div id="">
                 <button id="reset" name="reset">Reset</button>
-                <button id="resize" name="resize">Custom Grid</button>
+                <div id='size'>
+                    <p>Custom Grid</p>
+                    <input id='resize' type='number' min='1' value='16'>
+                </div>
             </div>
-            <div id="color-container">
+            <div id="colors">
                 <button id="black" class="change-color" name="black">Black</button>
                 <button id="random" class="change-color" name="random">Random</button>    
             </div>

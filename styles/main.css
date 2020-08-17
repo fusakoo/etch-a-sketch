@@ -4,24 +4,24 @@
     --grid-cols: 16;
 }
   
-#cell-container {
+#container {
     display: grid;
-    grid-gap: 0;
     /* Repeat the number of rows */
-    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-rows: repeat(var(--grid-rows), auto);
     /* Repeat the set number of columns */
-    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), auto);
     height: 600px;
     width: 600px;
     margin: auto;
+    border: 2px solid black;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
   
 .cell-item {
-    border: 0.5px solid white;
-    margin: 0;
+    border: 0.3px solid white;
+    transition: call .1s ease;
 }
 
 .fill {
-    background-color: black;
+    background: rgb(0,0,0);
 }

@@ -1,27 +1,32 @@
 // Declare variables
-const cellContainer = document.querySelector('#cell-container');
+const container = document.querySelector('#container');
 const resize = document.querySelector('#resize');
 const reset = document.querySelector('#reset');
-let defaultGrid = 16;
 
-function setCanvasSize() {
-    let resize = prompt('Please enter the number you\'d like the side of square to be: ', 'default: 16');
-    createCanvas(size,size);
-}
+const random = document.querySelector('#random');
+const black = document.querySelector('#black');
+
+// Add event listeners to buttons/options
+resize.addEventListener('change', resetCanvas);
+reset.addEventListener('click', resetCanvas);
+
+//random.addEventListener('click', changeColorRandom);
+//black.addEventListener('click', changeColorBlack);
 
 // Create the canvas
 function createCanvas(rows, cols) {
+    container.textContent = '';
     // Set number of rows
-    cellContainer.style.setProperty('--grid-rows', rows);
+    container.style.setProperty('--grid-rows', rows);
     // Set number of columns
-    cellContainer.style.setProperty('--grid-cols', cols);
+    container.style.setProperty('--grid-cols', cols);
     for (let i = 0; i < (rows * cols); i++) {
         let cell = document.createElement("div");
-        cell.innerText = (i + 1);
-        cellContainer.appendChild(cell).className = "cell-item";
+        container.appendChild(cell).className = "cell-item";
     };
 };
 
+// Draw (fill a cell) on the canvas
 function drawCanvas() {
     const cells = document.querySelectorAll('.cell-item');
     cells.forEach(cell => {
@@ -31,5 +36,20 @@ function drawCanvas() {
     });
 }
 
-window.onload = createCanvas(defaultGrid, defaultGrid);
-drawCanvas();
+// Resets the canvas
+function resetCanvas() {
+    const cells = document.querySelectorAll('.cell-item');
+    cells.forEach(cell => {
+        cell.classList.remove('fill');
+    });
+    createCanvas(resize.value, resize.value)
+    drawCanvas();
+}
+
+function getRandomColor() {
+    const random = () => Math.floor(Math.random() * 256);
+    return `rgb(${random()}, ${random()}, ${random()})`;
+}
+
+// Run function
+resetCanvas();
