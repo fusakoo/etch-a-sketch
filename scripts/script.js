@@ -10,8 +10,6 @@ const black = document.querySelector('#black');
 resize.addEventListener('change', resetCanvas);
 reset.addEventListener('click', resetCanvas);
 
-//random.addEventListener('click', changeColorRandom);
-//black.addEventListener('click', changeColorBlack);
 
 // Create the canvas
 function createCanvas(rows, cols) {
@@ -25,6 +23,11 @@ function createCanvas(rows, cols) {
         container.appendChild(cell).className = "cell-item";
     };
 };
+
+function getRandomColor() {
+    const random = () => Math.floor(Math.random() * 256);
+    return `rgb(${random()}, ${random()}, ${random()})`;
+}
 
 // Draw (fill a cell) on the canvas
 function drawCanvas() {
@@ -44,11 +47,6 @@ function resetCanvas() {
     });
     createCanvas(resize.value, resize.value)
     drawCanvas();
-}
-
-function getRandomColor() {
-    const random = () => Math.floor(Math.random() * 256);
-    return `rgb(${random()}, ${random()}, ${random()})`;
 }
 
 // Run function
