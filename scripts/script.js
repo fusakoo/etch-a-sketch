@@ -45,6 +45,7 @@ function createCanvas(rows, cols) {
     };
 };
 
+// Generate randomized rgb combination
 function getRandomColor() {
     const random = () => Math.floor(Math.random() * 256);
     return `rgb(${random()}, ${random()}, ${random()})`;

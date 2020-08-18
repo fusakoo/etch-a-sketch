@@ -6,8 +6,9 @@
     --grid-cols: 16;
     --grid-shadow: rgba(0,0,0,0.2);
     --cell-shadow: rgba(0,0,0,0.1);
-    --text-shadow: rgb(255,177,0);
-    --title-color: rgb(74,85,232);
+    --text-shadow: #588B8B;
+    --title-color: #F28F3B;
+    --subtitle-color: #C8553D;
 }
 
 html {
@@ -25,6 +26,7 @@ main {
     grid-template-areas: 
         "header header"
         "main setting"
+        "footer footer"
 }
 
 h1 {
@@ -53,7 +55,18 @@ h1 {
 
 h2, h3 {
     font-family: 'Archivo Black', sans-serif;
+    color: var(--subtitle-color);
     font-weight: 300;
+}
+
+h4 {
+    text-align: center;
+    grid-area: footer;
+}
+
+a {
+    text-decoration: none;
+    color: var(--subtitle-color);
 }
 
 .descriptor-1 {
@@ -62,11 +75,13 @@ h2, h3 {
 }
 
 .descriptor-2 {
+    color: var(--subtitle-color);
     font-size: 0.8em;
     margin-top: -0.6em;
 }
 
 hr {
+    color: var(--subtitle-color);
     opacity: 0.3;
     margin: 1em 0;
 }
@@ -114,13 +129,13 @@ hr {
     border-radius: 4px;
     margin: 2px;
     padding: 5px 5px;
-    border: 2px solid black;
+    border: 2px solid #2E2E2E;
     background-color: transparent;
 }
 
 .button:hover {
-    background-color: rgb(0,0,0);
-    color: rgb(255,255,255);
+    background-color: #2E2E2E;
+    color: #FFFFFF;
 }
 
 .button:active {
